@@ -141,16 +141,16 @@ module.exports = handler = async (m, conn, map) => {
 			options.adReply
 				? (content.contextInfo = {
 						externalAdReply: {
-							title: "© " + config.namebot,
+							title:
+              config.namebot,
 							mediaType: 3,
 							renderLargerThumbnail: true,
 							showAdAttribution: true,
 							body:
 								config.namebot +
-								" multi-device whatsapp bot using JavaScript and made by " +
-								config.ownername,
+								"Multi-Device Whatsapp Bot Using JavaScript",
 							thumbnail: await conn.getBuffer(config.thumb),
-							sourceUrl: "https://github.com/Rizky878/rzky-multidevice/",
+							sourceUrl: "https://rizfurr.ml",
 						},
 				  })
 				: "";

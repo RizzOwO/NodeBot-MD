@@ -64,16 +64,14 @@ module.exports = {
 			await conn.sendMessage(
 				msg.from,
 				{
-					video: await conn.getBuffer(config.thumbvideo),
-					gifPlayback: true,
+					image: await conn.getBuffer(config.thumbMenu),
 					caption: str,
 					footer: config.namebot + " • " + config.ownername,
 					templateButtons: [
-						{ urlButton: { displayText: "Shortlink", url: "https://sl.rzkyfdlh.tech" } },
-						{ urlButton: { displayText: "Downloader", url: "https://downloader.rzkyfdlh.tech" } },
-						{ quickReplyButton: { displayText: "Script Bot📑", id: "#script" } },
-						{ quickReplyButton: { displayText: "Owner👥", id: "#owner" } },
-						{ quickReplyButton: { displayText: "Dashboard📊", id: "#db" } },
+						{ urlButton: { displayText: "My Website", url: "https://rizfurr.ml" } },
+						{ quickReplyButton: { displayText: "Status Bot", id: "#status" } },
+						{ quickReplyButton: { displayText: "Owner", id: "#owner" } },
+						{ quickReplyButton: { displayText: "Dashboard", id: "#db" } },
 					],
 				},
 				{ quoted: msg }

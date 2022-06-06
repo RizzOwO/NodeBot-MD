@@ -197,15 +197,16 @@ const connect = async () => {
 	conn.ev.on("creds.update", saveState);
 	conn.ev.on("connection.update", async (up) => {
 		const { lastDisconnect, connection } = up;
+		if(connection) spinnies.add("spinner-2", { text: "", color: "cyan" });
 		if (connection == "connecting")
-			spinnies.add("spinner-2", { text: "Connecting to the WhatsApp bot...", color: "cyan" });
+			spinnies.update("spinner-2", { text: "Connecting to the WhatsApp bot...", color: "cyan" });
 		if (connection) {
 			if (connection != "connecting")
 				spinnies.update("spinner-2", { text: "Connection: " + connection, color: "yellow" });
 		}
 		if (connection == "open")
 			spinnies.succeed("spinner-2", { text: "Successfully connected to whatsapp", color: "green" });
-
+ 
 		if (connection === "close") {
 			let reason = new Boom(lastDisconnect.error).output.statusCode;
 			if (reason === DisconnectReason.badSession) {

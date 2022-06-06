@@ -37,11 +37,7 @@ module.exports = {
 					category[cteg].push(info);
 				}
 			}
-			let str =
-				"```" +
-				config.namebot +
-				"```\n\n" +
-				`Halo, ${pushName === undefined ? sender.split("@")[0] : pushName}\n*Here is the Command List*\n\n`;
+			let str = `Halo, ${pushName === undefined ? sender.split("@")[0] : pushName}\n*Here is the Command List*\n\n`;
 			const keys = Object.keys(category);
 			//var a = 1
 			for (const key of keys) {
@@ -65,16 +61,14 @@ module.exports = {
 			await conn.sendMessage(
 				msg.from,
 				{
-					video: await conn.getBuffer(config.thumbvideo),
-					gifPlayback: true,
+					image: await conn.getBuffer(config.thumbMenu),
 					caption: str,
 					footer: config.namebot + " • " + config.ownername,
 					templateButtons: [
-						{ urlButton: { displayText: "Shortlink", url: "https://sl.rzkyfdlh.tech" } },
-						{ urlButton: { displayText: "Downloader", url: "https://downloader.rzkyfdlh.tech" } },
-						{ quickReplyButton: { displayText: "Script Bot📑", id: "#script" } },
-						{ quickReplyButton: { displayText: "Changelog📋", id: "#changelog" } },
-						{ quickReplyButton: { displayText: "Dashboard📊", id: "#db" } },
+						{ urlButton: { displayText: "My Website", url: "https://rizfurr.ml" } },
+						{ quickReplyButton: { displayText: "Status Bot", id: "#status" } },
+						{ quickReplyButton: { displayText: "Changelog", id: "#changelog" } },
+						{ quickReplyButton: { displayText: "Dashboard", id: "#db" } },
 					],
 				},
 				{ quoted: msg }

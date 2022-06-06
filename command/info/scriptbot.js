@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
 	name: "scriptbot",
 	alias: ["script", "sc", "scbot"],
 	category: "info",
@@ -18,4 +18,4 @@ module.exports = {
 			{ quoted: msg }
 		);
 	},
-};
+};*/
