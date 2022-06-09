@@ -1,4 +1,4 @@
-<p align="center">NodeBot Multi Device</p>
+<p align="center">Whatsapp Bot Multi Device</p>
 <div align="center">
 <img src="https://i.ibb.co/MNxRrGn/pp-gh.png" width="150" height="150" border="0" alt="PFFP">
 
@@ -63,11 +63,11 @@ Contoh Command : [`./command/umum/help.js`](https://github.com/RizzOwO/NodeBot-M
 
 ## Highlights
 
--   [•] Simple Penggunaan,
--   [•] Mudah digunakan,
--   [•] Mudah untuk dirawat/diperbaiki,
--   [•] Support Hosting [`Okteto`](https://cloud.okteto.com)
--   [•] Dan ringan
+-   [ • ] Simple Penggunaan,
+-   [ • ] Mudah digunakan,
+-   [ • ] Mudah untuk dirawat/diperbaiki,
+-   [ • ] Support Hosting [`Okteto`](https://cloud.okteto.com)
+-   [ • ] Dan ringan
 
 ## Config
 
@@ -90,6 +90,7 @@ $ pkg install nodejs
 $ git clone https://github.com/RizzOwO/NodeBot-MD/
 $ cd NodeBot-MD
 $ npm install --arch=x64 --platform=linux sharp
+$ node test.js //tes run kalo ada yg error
 $ npm start
 # Scan QR
 ```
