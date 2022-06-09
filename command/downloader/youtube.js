@@ -27,18 +27,19 @@ module.exports = {
 			case "play":
 				await conn.sendMessage(msg.from, {
 					image: { url: yt[0].thumb },
-					caption: await rzky.tools.parseResult(yt[0], { title: "Youtube" }),
+					caption: await rzky.tools.parseResult(yt[0], 
+						{ title: "Youtube Downloader",
+						  ignoreKey: ["link"],
+						}),
 					templateButtons: [
 						{ urlButton: { displayText: "Source", url: teks } },
-						{ urlButton: { displayText: "Downloader", url: "https://downloader.rzkyfdlh.tech" } },
 						{ quickReplyButton: { displayText: "Audio🎶", id: "#ytmp3 " + teks } },
 						{ quickReplyButton: { displayText: "Video🎥", id: "#ytmp4 " + teks } },
-						{ quickReplyButton: { displayText: "Dashboard📊", id: "#db" } },
 					],
 				});
 				break;
 			case "ytmp3":
-				await conn.sendFile(msg.from, yt[0].link, yt[0].judul + ".mp3", "", msg);
+				await conn.sendMessage(msg.from, { document: { url: yt[0].link}, mimetype:"audio/mpeg", fileName: yt[0].judul + ".mp3"}, { quoted: msg });
 				break;
 			case "ytmp4":
 				await conn.sendMessage(
@@ -48,7 +49,7 @@ module.exports = {
 							url: yt[0].link,
 						},
 						mimetype: "video/mp4",
-						caption: await rzky.tools.parseResult(yt[0], { title: "Youtube" }),
+						caption: await rzky.tools.parseResult(yt[0], { title: "Youtube Video Downloader" }),
 						fileName: yt.title + ".mp4",
 					},
 					{
