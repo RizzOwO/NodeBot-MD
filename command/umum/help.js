@@ -1,6 +1,6 @@
 module.exports = {
 	name: "help",
-	alias: ["h", "cmd", "menu"],
+	alias: ["cmd", "menu"],
 	category: "umum",
 	isLimit: true,
 	async run({ msg, conn }, { q, map, args }) {
@@ -66,8 +66,7 @@ module.exports = {
 					footer: config.namebot + " • " + config.ownername,
 					templateButtons: [
 						{ urlButton: { displayText: "My Website", url: "https://rizfurr.ml" } },
-						{ quickReplyButton: { displayText: "Status Bot", id: "#status" } },
-						{ quickReplyButton: { displayText: "Changelog", id: "#changelog" } },
+						{ quickReplyButton: { displayText: "Owner", id: "#owner" } },
 						{ quickReplyButton: { displayText: "Dashboard", id: "#db" } },
 					],
 				},
