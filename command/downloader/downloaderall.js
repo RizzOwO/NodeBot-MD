@@ -23,7 +23,7 @@ module.exports = {
 		delete yt.mp3;
 		delete yt.status;
 		var result = await rzky.tools.parseResult(yt, {
-			title: "Downloader",
+			title: "Downloader All",
 		});
 		try {
 			switch (pilih) {
