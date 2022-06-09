@@ -1,4 +1,4 @@
-/*module.exports = {
+module.exports = {
 	name: "scriptbot",
 	alias: ["script", "sc", "scbot"],
 	category: "info",
@@ -9,13 +9,12 @@
 			{
 				image: { url: config.thumb },
 				footer: config.namebot,
-				// Gausah di ubah kontol najis modal copas sana sini ubah source cih
-				caption: `Script Bot Is here\ndon't forget fork + star XD`,
+				caption: `Script Bot Is here\nDon't forget fork & star X3`,
 				templateButtons: [
-					{ urlButton: { displayText: "Script Bot", url: "https://github.com/Rizky878/rzky-multidevice/" } },
+					{ urlButton: { displayText: "Script Bot", url: "https://github.com/RizzOwO/NodeBot-MD/" } },
 				],
 			},
 			{ quoted: msg }
 		);
 	},
-};*/
+}
