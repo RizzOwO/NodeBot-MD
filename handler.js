@@ -145,9 +145,7 @@ module.exports = handler = async (m, conn, map) => {
 							mediaType: 3,
 							renderLargerThumbnail: true,
 							showAdAttribution: true,
-							body:
-								config.namebot +
-								"Multi-Device Whatsapp Bot Using JavaScript",
+							body: "Multi-Device Whatsapp Bot Using JavaScript",
 							thumbnail: await conn.getBuffer(config.thumb),
 							sourceUrl: "https://rizfurr.ml",
 						},
@@ -278,7 +276,6 @@ module.exports = handler = async (m, conn, map) => {
 							caption: await rzky.tools.parseResult(rz, { title: "Auto Download" }),
 							templateButtons: [
 								{ urlButton: { displayText: "Source", url: link } },
-								{ urlButton: { displayText: "Downloader", url: "https://downloader.rzkyfdlh.tech" } },
 								{ quickReplyButton: { displayText: "Audio🎶", id: "#tiktokaudio " + link } },
 							],
 						},
