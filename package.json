@@ -1,10 +1,10 @@
 {
-  "name": "rzky-multidevice",
-  "version": "3.0.0",
+  "name": "rizz-multidevice",
+  "version": "3.1.0",
   "main": "index.js",
   "depecrated": false,
   "license": "MIT",
-  "author": "RizkyFadilah",
+  "author": "RizFurr",
   "scripts": {
     "start": "node .",
     "format": "prettier --write '**/*.{md,js,json}'"
@@ -70,7 +70,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rizky878/rzky-multidevice.git"
+    "url": "git+https://github.com/RizzOwO/NodeBot-MD.git"
   },
   "keywords": [
     "bot-md",
@@ -83,7 +83,7 @@
     "WhatsApp"
   ],
   "bugs": {
-    "url": "https://github.com/Rizky878/rzky-multidevice/issues"
+    "url": "https://github.com/RizzOwO/NodeBot-MD/issues"
   },
-  "homepage": "https://github.com/Rizky878/rzky-multidevice#readme"
+  "homepage": "https://github.com/RizzOwO/NodeBot-MD#readme"
 }
