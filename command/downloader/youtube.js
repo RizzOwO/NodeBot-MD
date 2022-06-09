@@ -29,7 +29,7 @@ module.exports = {
 					image: { url: yt[0].thumb },
 					caption: await rzky.tools.parseResult(yt[0], 
 						{ title: "Youtube Downloader",
-						  ignoreKey: ["link"],
+						  delete: ["link"],
 						}),
 					templateButtons: [
 						{ urlButton: { displayText: "Source", url: teks } },
