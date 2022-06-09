@@ -177,6 +177,7 @@ const connect = async () => {
 	const conn = Baileys({
 		printQRInTerminal: true,
 		auth: state,
+		browser: ["RizFurr", "Firefox", "3.0"],
 		logger: log({ level: "silent" }),
 		version,
 	});
@@ -270,11 +271,11 @@ const connect = async () => {
 	});
 
 	// I don't know what's the point hehe
-	if (!fs.existsSync("./src") || !fs.existsSync("./src/rzky-md.jpg")) {
+	if (!fs.existsSync("./src") || !fs.existsSync("./src/thumb-md.jpg")) {
 		fs.mkdir("./src", async function (err) {
 			if (err) {
-				if (!fs.existsSync("./src/rzky-md.jpg")) {
-					fs.writeFile("./src/rzky-md.jpg", (await require("axios")(config.thumb)).data, function (err) {
+				if (!fs.existsSync("./src/thumb-md.jpg")) {
+					fs.writeFile("./src/thumb-md.jpg", (await require("axios")(config.thumb)).data, function (err) {
 						if (err) {
 							console.log(color("[INFO]", "yellow"), "error writing file", err);
 						} else {
@@ -282,12 +283,12 @@ const connect = async () => {
 						}
 					});
 				}
-				fs.existsSync("./src/rzky-md.jpg")
+				fs.existsSync("./src/thumb-md.jpg")
 					? console.log(color("[INFO]", "yellow"), "failed to create directory", err)
 					: "";
 			} else {
 				console.log(color("[INFO]", "yellow"), `Succes create a "src" file`);
-				fs.writeFile("./src/rzky-md.jpg", (await require("axios")(config.thumb)).data, function (err) {
+				fs.writeFile("./src/thumb-md.jpg", (await require("axios")(config.thumb)).data, function (err) {
 					if (err) {
 						console.log(color("[INFO]", "yellow"), "error writing file", err);
 					} else {
@@ -297,26 +298,7 @@ const connect = async () => {
 			}
 		});
 	}
-
-	// detect Reaction message
-	conn.ev.on("messages.reaction", async (m) => {
-		let mesg = await store.loadMessage(m.reaction.key.remoteJid, m.key.id, conn);
-		await conn.sendMessage(
-			m.reaction.key.remoteJid,
-			{
-				text: `Terdeteksi @${
-					(m.reaction.key.fromMe ? decodeJid(conn.user.id) : decodeJid(m.reaction.key.participant)).split(
-						"@"
-					)[0]
-				} Mengirim Reaction Message ${
-					m.key.participant ? `ke @${m.key.participant.split("@")[0]}` : ``
-				}\n*Emoji Reaction:* ${m.reaction.text}`,
-				withTag: true,
-			},
-			{ quoted: mesg }
-		);
-	});
-
+	
 	// detect group update
 	conn.ev.on("groups.update", async (json) => {
 		const res = json[0];
