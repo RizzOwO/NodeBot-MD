@@ -11,7 +11,7 @@
 	"self": false,
 	"limit": { "limitUser": 30, "gameLimitUser": 10, "gameLimitPremium": 30 },
 	"packInfo": { "packname": "NodeBot", "author": "@Rizz~" },
-	"namebot": "NodeBot",
+	"namebot": "NodeBot-MD",
 	"timezone": "Asia/Jakarta",
 	"email": "admin@rizfurr.ml",
 	"instagram": "https://instagram.com/prodbyfxntvsy",
