@@ -37,11 +37,11 @@ module.exports = {
 					category[cteg].push(info);
 				}
 			}
-			let str = `Halo, ${pushName === undefined ? sender.split("@")[0] : pushName}\n*Here is the Command List*\n\n`;
+			let str = `*Hawoo,* ${pushName === undefined ? sender.split("@")[0] : pushName}\n*Here is the Command List*\n\n`;
 			const keys = Object.keys(category);
 			//var a = 1
 			for (const key of keys) {
-				str += `==== [ *${key.toUpperCase()}* ] ====\n${category[key]
+				str += `•••• ❝ *${key.toUpperCase()}* ❞ ••••\n${category[key]
 					.map(
 						(cmd, index) =>
 							`*${index + 1}.* *${cmd.options.noPrefix ? "" : "#"}${cmd.name}*${
