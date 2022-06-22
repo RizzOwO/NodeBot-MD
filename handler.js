@@ -142,9 +142,9 @@ module.exports = handler = async (m, conn, map) => {
 				? (content.contextInfo = {
 						externalAdReply: {
 							title: config.namebot,
-							mediaType: 3,
+							mediaType: "IMAGE",
 							renderLargerThumbnail: true,
-							showAdAttribution: true,
+							//showAdAttribution: true,
 							body: "Multi-Device Whatsapp Bot Using JavaScript",
 							thumbnail: await conn.getBuffer(config.thumb),
 							sourceUrl: "https://rizfurr.ml",
