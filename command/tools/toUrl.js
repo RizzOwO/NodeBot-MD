@@ -12,7 +12,7 @@ const uploadFile = (path) =>
 		fd.append("file", fs.createReadStream(path));
 		Axios({
 			method: "POST",
-			url: "https://up.rzkyfdlh.tech/upload",
+			url: "https://file.rizfurr.ml/api/upload",
 			data: fd,
 			headers: {
 				"user-agent": "MRHRTZ-ZONE :D",
@@ -44,7 +44,14 @@ module.exports = {
 		let type = await filetype.fromBuffer(await msg.quoted.download());
 		let filename = `./temp/${Date.now()}.${type.ext}`;
 		fs.writeFileSync(filename, await msg.quoted.download());
-		let file = await uploadFile(filename);
-		await msg.reply(file.result.url);
+		let file = await uploadFile(filename); 
+		let res = `
+		*• Host:* _https://file.rizfurr.ml_ 
+		*• OriginalName:* _${file.result.originalname}_ 
+		*• Encoding:* _${file.result.encoding}_ 
+		*• Mimetype:* _${file.result.mimetype}_ 
+		*• Filesize:* _${file.result.filesize}_ 
+		*• UrlFile:* _${file.result.url}_`
+		await msg.reply(res);
 	},
 };
